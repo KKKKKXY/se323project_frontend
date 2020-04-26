@@ -2,9 +2,11 @@ import Lecturer from './lecturer';
 
 export default class Course {
     id: number;
-    courseId: string;
-    courseName: string;
-    content: string;
+    activityId: string;
+    activityName: string;
+    semester: string;
+    academic: string;
+    participant: string;
+    credit: string;
     lecturer:Lecturer;
   }
-  

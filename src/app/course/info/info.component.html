@@ -5,10 +5,10 @@
   </mat-toolbar>
   <form style="margin-left: 1em">
     <mat-form-field class="full-width">
-        <input matInput placeholder="Course Id" [value]="course?.courseId" readonly>
+        <input matInput placeholder="Activity Id" [value]="course?.activityId" readonly>
     </mat-form-field>
     <mat-form-field class="full-width">
-      <input matInput placeholder="Course Name" [value]="course?.courseName" readonly>
+      <input matInput placeholder="Activity Name" [value]="course?.activityName" readonly>
     </mat-form-field>
     <table class="full-width" cellspacing="0">
         <tr>
@@ -24,9 +24,4 @@
             </td>
         </tr>
   </table>
-    <mat-form-field class="full-width">
-        <textarea matInput placeholder="Content" [value]="course?.content" readonly></textarea>
-    </mat-form-field>
   </form>
-  
-  

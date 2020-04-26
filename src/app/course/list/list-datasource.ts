@@ -70,7 +70,7 @@ export class ListDataSource extends DataSource<Course> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.courseName, b.courseName, isAsc);
+        case 'name': return compare(a.activityName, b.activityName, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }
