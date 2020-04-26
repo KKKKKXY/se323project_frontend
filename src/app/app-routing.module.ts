@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FileNotFoundComponent } from './shared/file-not-found/file-not-found.component';
+import { AdminComponent } from './userType/admin/admin.component';
+import { StudentComponent } from './userType/student/student.component';
+import { TeacherComponent } from './userType/teacher/teacher.component';
 
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/list',
+    redirectTo: '/adminFunctions',
     pathMatch: 'full'
   },
-  { path: '**', component: FileNotFoundComponent }
-
+  { path: 'adminFunctions',component: AdminComponent},
+  { path: 'studentFunctions',component: StudentComponent},
+  { path: 'teacherFunctions',component: TeacherComponent},
+  { path: '**', component: FileNotFoundComponent },
+  
 ];
 
 @NgModule({
