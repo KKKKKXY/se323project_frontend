@@ -33,7 +33,9 @@ import { CourseService } from './service/course.service';
 import { CourseRestImplService } from './service/course-rest-impl.service';
 import { LecturerService } from './service/lecturer.service';
 import { LecturerRestImplService } from './service/lecturer-rest-impl.service';
-
+import { AdminComponent } from './userType/admin/admin.component';
+import { StudentComponent } from './userType/student/student.component';
+import { TeacherComponent } from './userType/teacher/teacher.component';
 
 
 
@@ -51,6 +53,9 @@ import { LecturerRestImplService } from './service/lecturer-rest-impl.service';
     ListComponent,
     CourseAddComponent,
     CourseInfoComponent,
+    AdminComponent,
+    StudentComponent,
+    TeacherComponent
 
   ],
   imports: [
