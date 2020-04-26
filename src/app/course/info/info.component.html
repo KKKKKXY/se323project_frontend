@@ -1,0 +1,32 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>Course</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <form style="margin-left: 1em">
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Course Id" [value]="course?.courseId" readonly>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Course Name" [value]="course?.courseName" readonly>
+    </mat-form-field>
+    <table class="full-width" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Lecturer name" [value]="course?.lecturer?.name" readonly>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Lecturer surname" [value]="course?.lecturer?.surname" readonly>
+                </mat-form-field>
+            </td>
+        </tr>
+  </table>
+    <mat-form-field class="full-width">
+        <textarea matInput placeholder="Content" [value]="course?.content" readonly></textarea>
+    </mat-form-field>
+  </form>
+  
+  

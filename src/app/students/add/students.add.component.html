@@ -1,0 +1,94 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>Add new student</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div>
+</div>
+<form style="margin-left: 1em" [formGroup]="form" (submit)="submit()">
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Student Id" formControlName="studentId" required #spy>
+        <mat-error *ngFor="let validation of validation_messages.studentId">
+            <mat-error class="error-message" *ngIf="form.get('studentId').hasError(validation.type) 
+                    && (form.get('studentId').dirty || form.get('studentId').touched)">
+                {{validation.message}}
+            </mat-error>
+        </mat-error>
+    </mat-form-field>
+    <table class="full-width" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="First name" formControlName="name" required>
+                    <mat-error *ngFor="let validation of validation_messages.studentId">
+                        <mat-error class="error-message" *ngIf="form.get('name').hasError(validation.type) 
+                                && (form.get('name').dirty || form.get('name').touched)">
+                            {{validation.message}}
+                        </mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="surname" formControlName="surname" required>
+                    <mat-error *ngFor="let validation of validation_messages.surname">
+                        <mat-error class="error-message" *ngIf="form.get('surname').hasError(validation.type) 
+                                && (form.get('surname').dirty || form.get('surname').touched)">
+                            {{validation.message}}
+                        </mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <div>
+            <button mat-raised-button type="button" class="center-button" (click)="downQuantity(student)">-</button>
+            <mat-form-field class="penInput">
+                <input matInput placeholder="pen Amount" class="center-text" value="0" formControlName="penAmount">
+                <mat-error *ngFor="let validation of validation_messages.penAmount">
+                    <mat-error class="error-message" *ngIf="form.get('penAmount').hasError(validation.type) 
+                            && (form.get('penAmount').dirty || form.get('penAmount').touched)">
+                        {{validation.message}}
+                    </mat-error>
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button layout="row" type="button" class="center-button"
+                (click)="upQuantity(student)">+</button>
+        </div>
+    </table>
+    <!-- <mat-form-field hintLabel="will change to the image uploader component later" class="full-width">
+        <input matInput placeholder="file name" formControlName="image">
+        <mat-error *ngFor="let validation of validation_messages.image">
+            <mat-error class="error-message" *ngIf="form.get('image').hasError(validation.type) 
+                    && (form.get('image').dirty || form.get('image').touched)">
+                {{validation.message}}
+            </mat-error>
+        </mat-error>
+    </mat-form-field> -->
+
+    <!-- <form>
+    <mat-file-upload></mat-file-upload>
+</form> -->
+
+
+    <form>
+        <mat-file-upload [labelText]="'Select your images:'" [selectButtonText]="'Choose File'"
+            [uploadButtonText]="'Submit'" [allowMultipleFiles]="false" [showUploadButton]="true"
+            [acceptedTypes]="'.png, .jpg, .jpeg'" [customSvgIcon]="'close_custom'"
+            (uploadClicked)="onUploadClicked($event)" (selectedFilesChanged)="onSelectedFilesChanged($event)">
+        </mat-file-upload>
+        <mat-progress-bar mode="determinate" [value]="progress" *ngIf="progress > 0"></mat-progress-bar>
+    </form>
+    
+    <mat-form-field class="full-width">
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+        <mat-error *ngFor="let validation of validation_messages.description">
+            <mat-error class="error-message" *ngIf="form.get('description').hasError(validation.type) 
+                    && (form.get('description').dirty || form.get('description').touched)">
+                {{validation.message}}
+            </mat-error>
+        </mat-error>
+    </mat-form-field>
+    <div class="center">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Add</button>
+    </div>
+</form>

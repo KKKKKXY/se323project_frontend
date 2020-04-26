@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/list']" routerLinkActive="router-link-active">List</a>
+            <a mat-list-item [routerLink]="['/add']" routerLinkActive="router-link-active">Add</a>
+            <a mat-list-item [matMenuTriggerFor]="menu">View</a>
+            <mat-menu #menu="matMenu">
+                <div *ngFor="let student of students$ | async">
+                    <a mat-menu-item style="text-decoration:none" [routerLink]="['detail',student.id]"
+                        routerLinkActive="router-link-active">
+                        {{student.name}}</a>
+                </div>
+            </mat-menu>
+
+
+
+            <a mat-list-item [routerLink]="['/course/list']" routerLinkActive="router-link-active">Course List</a>
+            <a mat-list-item [routerLink]="['/course/add']" routerLinkActive="router-link-active">Course Add</a>
+            <!-- <a mat-list-item [matMenuTriggerFor]="menu2">View Course</a>
+            <mat-menu #menu2="matMenu">
+                <div *ngFor="let course of courses$ | async">
+                    <a mat-menu-item style="text-decoration:none" [routerLink]="['course/info/',course.id]"
+                        routerLinkActive="router-link-active">
+                        {{course.courseName}}</a>
+                </div>
+            </mat-menu> -->
+
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span>lab01</span>
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
