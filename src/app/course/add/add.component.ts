@@ -14,24 +14,41 @@ import { LecturerService } from 'src/app/service/lecturer.service';
 export class CourseAddComponent implements OnInit {
 
   addressForm = this.fb.group({
-    courseId: [null, Validators.required],
-    courseName: [null, Validators.required],
-    content: [null, Validators.required],
+    activityId: [null, Validators.compose([Validators.required,Validators.maxLength(6),Validators.minLength(6),Validators.pattern('[0-9]+')])],
+    activityName: [null, Validators.compose([Validators.required,Validators.pattern('^[a-zA-Z0-9_]*$')])],
+    semester:[null, Validators.required],
+    academic:[null, Validators.required],
+    participant:[null, Validators.compose([Validators.required,Validators.pattern('[0-9]+')])],
+    credit:[null, Validators.compose([Validators.required,Validators.pattern('[0-9]+')])],
     lecturer: [null, Validators.required]
   });
   lecturerId: number;
 
   validation_messages = {
-    'courseId': [
-      { type: 'required', message: 'course id is <strong>required</strong>' },
+    'activityId': [
+      { type: 'required', message: 'the activity id is <strong>required</strong>' },
+      { type: 'maxlength', message: 'activity id exactly is 6' },
+      { type: 'minlength', message: 'activity id exactly is 6' },
+      { type: 'pattern', message: 'please enter number' }
     ],
-    'courseName': [
-      { type: 'required', message: 'the course name is <strong>required</strong>' }
+    'activityName': [
+      { type: 'required', message: 'the activity name is <strong>required</strong>' },
+      { type: 'pattern', message: 'please enter letter or number' }
     ],
-    'content': [
-      { type: 'required', message: 'the course content is <strong>required</strong>' }
-    ]
-    ,
+    'semester': [
+      { type: 'required', message: 'the semester is <strong>required</strong>' }
+    ],
+    'academic': [
+      { type: 'required', message: 'the academic is <strong>required</strong>' }
+    ],
+    'participant': [
+      { type: 'required', message: 'the participant is <strong>required</strong>' },
+      { type: 'pattern', message: 'please enter number' }
+    ],
+    'credit': [
+      { type: 'required', message: 'the credit is <strong>required</strong>' },
+      { type: 'pattern', message: 'please enter number' }
+    ],
     'lecturer': [
       { type: 'required', message: 'the lecturer is <strong>required</strong>' },
     ]

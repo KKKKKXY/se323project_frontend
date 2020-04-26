@@ -22,7 +22,7 @@ export class ListComponent implements AfterViewInit, OnInit {
   dataSource: ListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['courseId', 'name', 'content', 'lecturer','view'];
+  displayedColumns = ['activityId', 'activityName', 'semester', 'academic','participant','credit','lecturer','view'];
 
   constructor(private courseService: CourseService,private router: Router) { }
   ngOnInit() {
@@ -33,7 +33,7 @@ export class ListComponent implements AfterViewInit, OnInit {
       });
   }
   
-  routeToCourseInfo(courseId: number) {
-    this.router.navigate(['course/info',courseId]);
+  routeToCourseInfo(activityId: number) {
+    this.router.navigate(['course/info',activityId]);
   }
 }
