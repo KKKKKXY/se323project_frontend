@@ -15,9 +15,12 @@ export class CourseInfoComponent implements OnInit {
   ngOnInit() {
     this.course = {
       'id': -1,
-      'courseId': '',
-      'content': '',
-      'courseName': '',
+      'activityId': '',
+      'activityName': '',
+      'semester': '',
+      'academic':'',
+      'participant':'',
+      'credit':'',
       'lecturer': null
     };
     this.route.params
