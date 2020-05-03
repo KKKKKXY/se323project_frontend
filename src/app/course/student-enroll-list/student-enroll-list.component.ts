@@ -46,7 +46,7 @@ export class StudentEnrollListComponent implements AfterViewInit, OnInit {
     console.log(course);
     // this.studentService.enrollActivity(course)
     //   .subscribe(course => {
-        this.router.navigate(['course', 'list']);
+        this.router.navigate(['enrolledActivity']);
       // }
     // )
   }

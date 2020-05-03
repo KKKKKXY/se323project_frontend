@@ -37,6 +37,7 @@ import { AdminComponent } from './userType/admin/admin.component';
 import { StudentComponent } from './userType/student/student.component';
 import { TeacherComponent } from './userType/teacher/teacher.component';
 import { StudentEnrollListComponent } from './course/student-enroll-list/student-enroll-list.component';
+import { EnrolledListComponent } from './enrolled-list/enrolled-list.component';
 
 
 
@@ -57,7 +58,8 @@ import { StudentEnrollListComponent } from './course/student-enroll-list/student
     AdminComponent,
     StudentComponent,
     TeacherComponent,
-    StudentEnrollListComponent
+    StudentEnrollListComponent,
+    EnrolledListComponent
 
   ],
   imports: [
