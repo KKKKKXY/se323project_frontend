@@ -6,6 +6,7 @@ import { StudentComponent } from './userType/student/student.component';
 import { TeacherComponent } from './userType/teacher/teacher.component';
 import { StudentEnrollListComponent } from './course/student-enroll-list/student-enroll-list.component';
 import { EnrolledListComponent } from './enrolled-list/enrolled-list.component';
+import { DeleteListComponent } from './delete-list/delete-list.component';
 
 
 const appRoutes: Routes = [
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'teacherFunctions', component: TeacherComponent },
   { path: 'enrollActivity', component: StudentEnrollListComponent },
   { path: 'enrolledActivity', component: EnrolledListComponent },
+  { path: 'deleteActivity', component: DeleteListComponent },
   { path: '**', component: FileNotFoundComponent },
 
 

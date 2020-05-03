@@ -1,0 +1,32 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>Enrolled Activity</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div *ngFor="let activity of activities">
+    <form style="margin-left: 1em">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Activity Id" [value]="activity.activityId" readonly>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Activity Name" [value]="activity.activityName" readonly>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Semester" [value]="activity.semester" readonly>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Academic" [value]="activity.academic" readonly>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Credit" [value]="activity.credit" readonly>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Credit" [value]="activity.lecturer.name + '  ' + activity.lecturer.surname"
+                readonly>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Score" class="center-text" [value]="activity.score" readonly>
+        </mat-form-field>
+    </form>
+</div>
