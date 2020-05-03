@@ -13,7 +13,7 @@ export class StudentComponent implements OnInit {
   ngOnInit() {
   }
   enrollActivity() {
-    this.router.navigate(['/enrolledActivity']);
+    this.router.navigate(['/enrollActivity']);
   }
 
   seeActivityList() {
@@ -21,11 +21,11 @@ export class StudentComponent implements OnInit {
   }
 
   removeEnrolledActivity() {
-    this.router.navigate(['course/add']);
+    this.router.navigate(['/enrolledActivity']);
   }
 
   seeActivityScore() {
-    this.router.navigate(['course/add']);
+    this.router.navigate(['/deleteActivity']);
   }
 
 }
