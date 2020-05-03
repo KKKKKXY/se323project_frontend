@@ -39,6 +39,8 @@ import { TeacherComponent } from './userType/teacher/teacher.component';
 import { StudentEnrollListComponent } from './course/student-enroll-list/student-enroll-list.component';
 import { EnrolledListComponent } from './enrolled-list/enrolled-list.component';
 import { DeleteListComponent } from './delete-list/delete-list.component';
+import { GradeListComponent } from './grade-list/grade-list.component';
+import { ResultGradingComponent } from './result-grading/result-grading.component';
 
 
 
@@ -61,7 +63,9 @@ import { DeleteListComponent } from './delete-list/delete-list.component';
     TeacherComponent,
     StudentEnrollListComponent,
     EnrolledListComponent,
-    DeleteListComponent
+    DeleteListComponent,
+    GradeListComponent,
+    ResultGradingComponent
 
   ],
   imports: [

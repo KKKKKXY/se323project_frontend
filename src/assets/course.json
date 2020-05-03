@@ -22,5 +22,18 @@
 				"surname":"Hirisajja"
 			},
 			"score":89
+		},
+		{
+			"id": 3,
+			"activityId":"953494",
+			"activityName":"Selected Topics in SE 1",
+			"semester":"1",
+			"academic":"2021",
+			"credit":5,
+			"lecturer":{
+				"name":"Pree",
+				"surname":"Thiengburanathum"
+			},
+			"score":70
 		}
 ]

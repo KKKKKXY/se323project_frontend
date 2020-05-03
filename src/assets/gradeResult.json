@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "activityId":"953331",
+        "activityName":"Component Based Software Dev",
+        "semester":"1",
+        "academic":"2020",
+        "lecturer":{
+            "name":"Chartchai",
+            "surname":"Doungsa-ard"
+        },
+        "score":"B"
+    },
+    {
+        "id": 2,
+        "activityId":"953234",
+        "activityName":"Advance Software Development",
+        "semester":"2",
+        "academic":"2020",
+        "lecturer":{
+            "name":"Jayakrit",
+            "surname":"Hirisajja"
+        },
+        "score":"B"
+    },
+    {
+        "id": 3,
+        "activityId":"953494",
+        "activityName":"Selected Topics in SE 1",
+        "semester":"1",
+        "academic":"2021",
+        "credit":5,
+        "lecturer":{
+            "name":"Pree",
+            "surname":"Thiengburanathum"
+        },
+        "score":"B"
+    }
+]

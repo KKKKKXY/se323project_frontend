@@ -1,17 +1,17 @@
-import { AfterViewInit,Component, OnInit, ViewChild } from '@angular/core';
-import { DeleteActivityService } from '../service/delete-activity.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { gradeListItem, gradeListDataSource } from '../grade-list/gradeList-datasource';
+import { DeleteActivityService } from '../service/delete-activity.service';
+import { gradeListItem, gradeListDataSource } from './gradeList-datasource';
 
 @Component({
-  selector: 'app-delete-list',
-  templateUrl: './delete-list.component.html',
-  styleUrls: ['./delete-list.component.css']
+  selector: 'app-grade-list',
+  templateUrl: './grade-list.component.html',
+  styleUrls: ['./grade-list.component.css']
 })
-export class DeleteListComponent implements AfterViewInit,OnInit {
+export class GradeListComponent implements AfterViewInit,OnInit {
   ngAfterViewInit(): void {
   }
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -20,18 +20,19 @@ export class DeleteListComponent implements AfterViewInit,OnInit {
   dataSource: gradeListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['activityId', 'activityName', 'semester', 'academic', 'lecturer', 'score'];
+  displayedColumns = ['activityId', 'activityName', 'semester', 'academic', 'lecturer', 'score', 'grade'];
 
-
-
-  constructor(private deleteActivityService:DeleteActivityService) { }
-
+  constructor(private deleteActivityService: DeleteActivityService, private router: Router) { }
   ngOnInit() {
     this.deleteActivityService.getDeleteActivity().subscribe(
       courses => {
         this.dataSource = new gradeListDataSource(this.paginator, this.sort);
         this.dataSource.data = courses;
       });
+  }
+
+  grade() {
+        this.router.navigate(['/result']);
   }
 
 }

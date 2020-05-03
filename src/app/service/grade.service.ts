@@ -6,10 +6,10 @@ import gradeCourse from '../entity/gradeCourse';
 @Injectable({
   providedIn: 'root'
 })
-export class DeleteActivityService {
+export class GradeService {
 
-  getDeleteActivity(): Observable<gradeCourse[]> {
-    return this.http.get<gradeCourse[]>('assets/course.json');
+  getActivityResult(): Observable<gradeCourse[]> {
+    return this.http.get<gradeCourse[]>('assets/gradeResult.json');
   }
   constructor(private http: HttpClient) { }
 }

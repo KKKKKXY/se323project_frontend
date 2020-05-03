@@ -1,17 +1,17 @@
-import { AfterViewInit,Component, OnInit, ViewChild } from '@angular/core';
-import { DeleteActivityService } from '../service/delete-activity.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { gradeListItem, gradeListDataSource } from '../grade-list/gradeList-datasource';
-
+import { GradeService } from '../service/grade.service';
 @Component({
-  selector: 'app-delete-list',
-  templateUrl: './delete-list.component.html',
-  styleUrls: ['./delete-list.component.css']
+  selector: 'app-result-grading',
+  templateUrl: './result-grading.component.html',
+  styleUrls: ['./result-grading.component.css']
 })
-export class DeleteListComponent implements AfterViewInit,OnInit {
+export class ResultGradingComponent implements AfterViewInit, OnInit {
+
   ngAfterViewInit(): void {
   }
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -20,18 +20,14 @@ export class DeleteListComponent implements AfterViewInit,OnInit {
   dataSource: gradeListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['activityId', 'activityName', 'semester', 'academic', 'lecturer', 'score'];
+  displayedColumns = ['activityId', 'activityName', 'semester', 'academic', 'lecturer', 'grade'];
 
-
-
-  constructor(private deleteActivityService:DeleteActivityService) { }
-
+  constructor(private gradeService: GradeService, private router: Router) { }
   ngOnInit() {
-    this.deleteActivityService.getDeleteActivity().subscribe(
+    this.gradeService.getActivityResult().subscribe(
       courses => {
         this.dataSource = new gradeListDataSource(this.paginator, this.sort);
         this.dataSource.data = courses;
       });
   }
-
 }

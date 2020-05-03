@@ -13,7 +13,7 @@ export class TeacherComponent implements OnInit {
   ngOnInit() {
   }
   grade() {
-    this.router.navigate(['course/add']);
+    this.router.navigate(['/grade']);
   }
 
 }
