@@ -13,7 +13,7 @@ export class StudentComponent implements OnInit {
   ngOnInit() {
   }
   enrollActivity() {
-    this.router.navigate(['course/add']);
+    this.router.navigate(['/enrolledActivity']);
   }
 
   seeActivityList() {
