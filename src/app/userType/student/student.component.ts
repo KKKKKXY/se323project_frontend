@@ -17,7 +17,7 @@ export class StudentComponent implements OnInit {
   }
 
   seeActivityList() {
-    this.router.navigate(['course/add']);
+    this.router.navigate(['/enrollActivity']);
   }
 
   removeEnrolledActivity() {
