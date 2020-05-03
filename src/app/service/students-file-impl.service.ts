@@ -9,6 +9,15 @@ import { map } from 'rxjs/operators';
 })
 
 export class StudentsFileImplService extends StudentService {
+  enrollActivity(activity: Observable<import("../entity/course").default>): Observable<import("../entity/course").default> {
+    throw new Error("Method not implemented.");
+  }
+
+
+
+  enrolledActivity(id: number): Observable<import("../entity/course").default[]> {
+    throw new Error("Method not implemented.");
+  }
   saveStudent(student: Student): Observable<Student> {
     throw new Error("Method not implemented.");
   }

@@ -7,8 +7,8 @@ export const environment = {
   studentApi: 'http://localhost:8080/students',
   uploadApi: 'http://localhost:8080/uploadFile',
   courseApi: 'http://localhost:8080/courses',
-  lecturerApi: 'http://localhost:8080/lecturers'
-
+  lecturerApi: 'http://localhost:8080/lecturers',
+  enrollActivityApi: 'http://localhost:8080/enrollActivity'
 };
 
 /*

@@ -4,6 +4,7 @@ import { FileNotFoundComponent } from './shared/file-not-found/file-not-found.co
 import { AdminComponent } from './userType/admin/admin.component';
 import { StudentComponent } from './userType/student/student.component';
 import { TeacherComponent } from './userType/teacher/teacher.component';
+import { StudentEnrollListComponent } from './course/student-enroll-list/student-enroll-list.component';
 
 
 const appRoutes: Routes = [
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
   { path: 'adminFunctions',component: AdminComponent},
   { path: 'studentFunctions',component: StudentComponent},
   { path: 'teacherFunctions',component: TeacherComponent},
+  { path: 'enrollActivity',component:StudentEnrollListComponent},
   { path: '**', component: FileNotFoundComponent },
   
 ];
