@@ -1,23 +1,39 @@
 [
 		{
 			"id": 1,
-			"courseId":"953494",
-			"courseName":"Selected Topics in SE 1",
-			"content":"Python and Data mining Development",
+			"activityId":"953331",
+			"activityName":"Component Based Software Dev",
+			"semester":"1",
+			"academic":"2020",
 			"lecturer":{
-				"name":"Pree",
-				"surname":"Thiengburanathum"
-			}
+				"name":"Chartchai",
+				"surname":"Doungsa-ard"
+			},
+			"score":75
 		},
 		{
 			"id": 2,
-			"courseId":"953234",
-			"courseName":"Advance Software Development",
-			"content":"The course for the smart students",
+			"activityId":"953234",
+			"activityName":"Advance Software Development",
+			"semester":"2",
+			"academic":"2020",
+			"lecturer":{
+				"name":"Jayakrit",
+				"surname":"Hirisajja"
+			},
+			"score":89
+		},
+		{
+			"id": 3,
+			"activityId":"953494",
+			"activityName":"Selected Topics in SE 1",
+			"semester":"1",
+			"academic":"2021",
+			"credit":5,
 			"lecturer":{
 				"name":"Pree",
 				"surname":"Thiengburanathum"
-			}
+			},
+			"score":70
 		}
-		
 ]
